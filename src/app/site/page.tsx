@@ -48,49 +48,44 @@ export default function Home() {
         <p className="text-muted-foreground text-center">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, explicabo aperiam corrupti consectetur magni numquam nihil repellendus harum provident delectus impedit dolores. Nesciunt vero ad molestias corrupti facere porro eum!
         </p>
-        {/* <div className="flex items-center justify-center gap-4 flex-wrap mt-6">
-        {pricingCards.map((card)=>{(
-          <Card key={card.title}>{card.description} </Card>
-        )}}
-        
-        </div> */}
 
         <div className="flex items-center justify-center gap-4 flex-wrap mt-6"> {pricingCards.map((card) => (
-          <Card key={card.title} className={clsx('w-[300px] flex flex-col justify-between', {"border-2 border-primary":card.title==="Unlimited Saas",})}>
+          //WIP: to do more...
+          <Card key={card.title} className={clsx('w-[300px] flex flex-col justify-between', { "border-2 border-primary": card.title === "Unlimited Saas", })}>
 
-          <CardHeader>
-            <CardTitle className={clsx('', {'text-muted-foreground':card.title !== 'Unlimited Saas'})}>
-            {card.title}
-            </CardTitle>
-            <CardDescription>{card.description}</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <span className="text-4xl font-bold">
-              {card.price}
-            </span>
-            <span className="text-4xl font-bold">
-              /m
-            </span>
-          </CardContent>
-          <CardFooter className="flex flex-col items-start gap-4">
-          <div>{card.features.map((feature)=><div key={feature} className="flex gap-2 items-center">
-            <Check  className="text-muted-foreground"/>
-            <p>{feature}</p>
-          </div>)}
-          
-          </div>
-          <Link
-  href={`/agency?plan=${card.priceId}`}
-  className={clsx(
-    'w-full text-center bg-primary p-2 rounded-md',
-    { 'bg-muted-foreground': card.title !== 'Unlimited Saas' }
-  )}
->
-  {/** Link content */}
-  Get Started
-</Link>
+            <CardHeader>
+              <CardTitle className={clsx('', { 'text-muted-foreground': card.title !== 'Unlimited Saas' })}>
+                {card.title}
+              </CardTitle>
+              <CardDescription>{card.description}</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <span className="text-4xl font-bold">
+                {card.price}
+              </span>
+              <span className="text-4xl font-bold">
+                /m
+              </span>
+            </CardContent>
+            <CardFooter className="flex flex-col items-start gap-4">
+              <div>{card.features.map((feature) => <div key={feature} className="flex gap-2 items-center">
+                <Check className="text-muted-foreground" />
+                <p>{feature}</p>
+              </div>)}
 
-          </CardFooter>
+              </div>
+              <Link
+                href={`/agency?plan=${card.priceId}`}
+                className={clsx(
+                  'w-full text-center bg-primary p-2 rounded-md',
+                  { 'bg-muted-foreground': card.title !== 'Unlimited Saas' }
+                )}
+              >
+                {/** Link content */}
+                Get Started
+              </Link>
+
+            </CardFooter>
           </Card>
         ))}
         </div>
