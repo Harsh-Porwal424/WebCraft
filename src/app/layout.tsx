@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ClerkProvider } from '@clerk/nextjs'
 import { dark } from '@clerk/themes'
+import { ThemeProvider } from "@/providers/theme-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,8 +19,17 @@ export default function RootLayout({
 }>) {
   return (
     <ClerkProvider appearance={{baseTheme: dark}}>
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
+      <ThemeProvider
+      attribute="class"
+      defaultTheme="system"
+      enableSystem
+      disableTransitionOnChange
+      >
+
       <body className={inter.className}>{children}</body>
+      </ThemeProvider>
+
     </html>
     </ClerkProvider>
 

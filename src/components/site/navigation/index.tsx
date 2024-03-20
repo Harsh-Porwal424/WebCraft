@@ -1,3 +1,4 @@
+import { ModeToggle } from '@/components/global/mode-toggle'
 import { UserButton } from '@clerk/nextjs'
 import { User } from '@clerk/nextjs/server'
 import Image from 'next/image'
@@ -33,6 +34,7 @@ const Navigation = ({ user }: Props) => {
         <aside className='flex gap-2 items-center'>
             <Link href={'/agency'} className='block bg-gradient-to-r from-purple-900 to-purple-700 text-white p-3 px-6 rounded-full hover:rounded-full hover:border-4 hover:border-black transition-all duration-300'>Login</Link>
             <UserButton />
+            <ModeToggle />
         </aside>
     </div>
   )
