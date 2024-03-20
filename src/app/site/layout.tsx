@@ -1,4 +1,4 @@
-import { Navigation } from 'lucide-react'
+import Navigation from '@/components/site/navigation'
 import React from 'react'
 
 // Define a functional component named AuthLayout, which takes a single prop named children
@@ -6,7 +6,7 @@ import React from 'react'
 const layout = ({children}: {children: React.ReactNode}) => {
   return (
     <div className='h-full'>
-      <Navigation/>
+      <Navigation />
       {children}
       </div>
   )
